@@ -1,0 +1,14 @@
+services:
+  prometheus:
+    restart: always
+    image: whatwewant/prometheus:${SERVICE_PROMETHEUS_IMAGE_VERSION}
+    # ports:
+    #   - 0.0.0.0:${SERVICE_PROMETHEUS_PORT}:9000
+    volumes:
+      - ${SERVICE_CONFIGS}/config.yml:/etc/prometheus/prometheus.yml
+    privileged: true
+      
+networks:
+  default:
+    external: true
+    name: compose-ingress
