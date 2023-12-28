@@ -10,6 +10,10 @@ check() {
     cat $SERVICE_CONFIG
   fi
 
+  if [ ! -f "${SERVICE_CONFIGS}/config.yml" ]; then
+    cp ${SERVICE_DIR}/conf/config.yml ${SERVICE_CONFIGS}/config.yml
+  fi
+
   # service::config_set SERVICE_PROMETHEUS_PORT text "Port" 9000
 }
 
