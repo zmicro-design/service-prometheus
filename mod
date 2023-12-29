@@ -1,3 +1,3 @@
 NAME=prometheus
-VERSION=v0.0.2
+VERSION=v1.0.0
 DESCRIPTION="prometheus Service"
