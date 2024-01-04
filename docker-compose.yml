@@ -7,7 +7,7 @@ services:
     command:
       - --storage.tsdb.retention.time=30d
       - --storage.tsdb.retention.size=20GB
-      - --config.file /etc/prometheus/prometheus.yml
+      - --config.file=/etc/prometheus/prometheus.yml
     volumes:
       - ${SERVICE_CONFIGS}/config.yml:/etc/prometheus/prometheus.yml
       - ${SERVICE_DATA}:/prometheus
