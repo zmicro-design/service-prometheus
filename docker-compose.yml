@@ -4,6 +4,9 @@ services:
     image: whatwewant/prometheus:${SERVICE_PROMETHEUS_IMAGE_VERSION}
     # ports:
     #   - 0.0.0.0:${SERVICE_PROMETHEUS_PORT}:9000
+    command:
+      - --storage.tsdb.retention.time=30d
+      - --storage.tsdb.retention.size=20GB
     volumes:
       - ${SERVICE_CONFIGS}/config.yml:/etc/prometheus/prometheus.yml
       - ${SERVICE_DATA}:/prometheus
